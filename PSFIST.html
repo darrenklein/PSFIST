@@ -105,8 +105,6 @@
         </div>
 
         <button class="navigation next" id="next" type="button">Next</button>
-
-        <!--<input id="submit_button" type="submit" value="Submit">-->
         
         <div id="sites"></div>
 
@@ -237,6 +235,8 @@
             //PREVIOUS BUTTON 
             $("#sites").prepend('<button class="navigation previous" id="previous" type="button">Previous</button>');
                 $("#previous").click(function(){
+                    $('html, body').animate({ scrollTop: 0 }, 'fast');
+                    
                     $("#global_entries").css("display", "block");
                     $("#sites").css("display", "none");
                     $("#next").css("display", "block");
@@ -439,7 +439,7 @@
             
             $("#next_summary").click(function(){
                 
-                
+                $('html, body').animate({ scrollTop: 0 }, 'fast');
                 
                 //VALIDATION
                 var proceed = true;
@@ -579,6 +579,19 @@
                 submitButton = '<input type="submit" class="navigation" id="submit_button" value="Submit" />';
                 
                 $("#summary").append(submitButton);
+                    
+                $("#submit_button").click(function() {
+                    $("#submit_button").hide();
+                    $("#previous_details").prop("disabled",true);
+                    $("#previous_details").css("cursor","initial");
+                    
+                    $("#previous_details").on('mouseover', function () {
+                        $(this).css('background', '#F5753F');
+                        });
+                        
+                    
+                    $("#summary").append('<div id="submitting" class="navigation animated flash small-12 columns">Submitting...</div>');
+                    });
                 
                 };
             
@@ -598,6 +611,8 @@
         
     //FIRST NEXT BUTTON
     $("#next").click(function(){
+        
+        $('html, body').animate({ scrollTop: 0 }, 'fast');
         
         //VALIDATION
         var nameField = document.forms["PSFIST_form"]["volunteer"].value;
@@ -659,6 +674,8 @@
     
         
     $("#previous_details").click(function(){
+        $('html, body').animate({ scrollTop: 0 }, 'fast');
+        
         $("#submit_button").css("display", "none");
         $("#summary").css("display", "none");
         $("#sites").css("display", "block");
@@ -667,10 +684,7 @@
         $("#previous_details").css("display", "none");
         });
         
-     
         
-
-            
          
             
     </script>
