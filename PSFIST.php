@@ -1,5 +1,17 @@
 <?php
 
+/*TO DETER SPAMBOTS*/
+$honey = $_POST['honey'];
+$honey = (string)$honey;
+$honeyLength = strlen($honey);
+    	
+ if($honeyLength > 0){
+     header("Location:http://d-bird.org/PSF/PSFIST_Confirmation.html");
+}
+
+else{
+  
+
 $servername = "localhost";
 $username = "dklein";
 $password = "********";
@@ -2314,31 +2326,17 @@ for ($i = 0; $i < $numberFound17; $i++){
 
 
 
-
-
-
-
-
-
-
-
-
-
  
- 
- 
- 
- 
- 
- 
- if ($conn->multi_query($sql) === TRUE) {
-     
-    header("Location:http://d-bird.org/PSF/PSFIST_Confirmation.html");
+  
+if ($conn->multi_query($sql) === TRUE) {
+     $conn->close();
+     header("Location:http://d-bird.org/PSF/PSFIST_Confirmation.html");
 
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
-}
+};
 
-$conn->close();
+
+};
 
 ?>
