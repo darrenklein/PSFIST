@@ -14,8 +14,8 @@ else{
 
 $servername = "localhost";
 $username = "dklein";
-$password = "********";
-$dbname = "PSF_test";
+$password = "******";
+$dbname = "Project_Safe_Flight";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -258,19 +258,19 @@ for ($i = 0; $i < $numberFound0; $i++){
 	$sex0[$i] = $birdSex0[$i];
 	$age0[$i] = $birdAge0[$i];
 	$notes0[$i] = $birdNotes0[$i];
-    	$action0[$i] = $birdAction0[$i];
+    $action0[$i] = $birdAction0[$i];
 	};
 	
 
     if ($numberFound0 == "none"){
 
        		if($numberFound1 == false){
-		  $sql = "INSERT INTO step_one (date, volunteer, route, site, species, start_time, duration, weather, notes)
+		  $sql = "INSERT INTO PSFIST (date, volunteer, route, site, species, start_time, duration, weather, notes)
 		  VALUES ('$date' , '$volunteer', '$route' , '01' , 'none', '$time', '$duration', '$weather', '$noneNotes0')";
 		}
 		
 		if($numberFound1 == true){
-		  $sql = "INSERT INTO step_one (date, volunteer, route, site, species, start_time, duration, weather, notes)
+		  $sql = "INSERT INTO PSFIST (date, volunteer, route, site, species, start_time, duration, weather, notes)
 		  VALUES ('$date' , '$volunteer',  '$route' , '01' , 'none', '$time', '$duration', '$weather', '$noneNotes0');";
 		};
     }
@@ -279,12 +279,12 @@ for ($i = 0; $i < $numberFound0; $i++){
 	if ($numberFound0 == 1){
 	
 		if($numberFound1 == false){
-		  $sql = "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql = "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber0[0]' , '$species0[0]', '$status0[0]', '$sex0[0]', '$age0[0]', '$notes0[0]', '$time', '$duration', '$weather', '$action0[0]')";
 		}
 		
 		if($numberFound1 == true){
-		  $sql = "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql = "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber0[0]' , '$species0[0]', '$status0[0]', '$sex0[0]', '$age0[0]', '$notes0[0]', '$time', '$duration', '$weather', '$action0[0]');";
 		};
 		
@@ -295,19 +295,19 @@ for ($i = 0; $i < $numberFound0; $i++){
 	elseif ($numberFound0 == 2){
 	
 		if($numberFound1 == false){	
-		  $sql = "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql = "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer',  '$route' , '$siteNumber0[0]' , '$species0[0]', '$status0[0]', '$sex0[0]', '$age0[0]', '$notes0[0]', '$time', '$duration', '$weather', '$action0[0]');";
 		
-		  $sql .= "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber0[1]' , '$species0[1]', '$status0[1]', '$sex0[1]', '$age0[1]', '$notes0[1]', '$time', '$duration', '$weather', '$action0[1]')";
 		}
         
 		
 		if($numberFound1 == true){	
-		  $sql = "INSERT INTO step_one (date ,  volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql = "INSERT INTO PSFIST (date ,  volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber0[0]' , '$species0[0]', '$status0[0]', '$sex0[0]', '$age0[0]', '$notes0[0]', '$time', '$duration', '$weather', '$action0[0]');";
 		
-		  $sql .= "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber0[1]' , '$species0[1]', '$status0[1]', '$sex0[1]', '$age0[1]', '$notes0[1]', '$time', '$duration', '$weather', '$action0[1]');";
 		}	
 	}
@@ -318,33 +318,33 @@ for ($i = 0; $i < $numberFound0; $i++){
 	elseif ($numberFound0 > 2){
         
         if($numberFound1 == false){	
-            $sql = "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql = "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber0[0]' , '$species0[0]', '$status0[0]', '$sex0[0]', '$age0[0]', '$notes0[0]', '$time', '$duration', '$weather', '$action0[0]');";
 		
 		      for ($i = 1; $i <= ($numberFound0 - 2); $i++){
-                $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+                $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
                 VALUES ('$date' , '$volunteer', '$route' , '$siteNumber0[$i]' , '$species0[$i]', '$status0[$i]', '$sex0[$i]', '$age0[$i]', '$notes0[$i]', '$time', '$duration', '$weather', '$action0[$i]');";
 	           };
 	       		
             $lastRecord = $numberFound0 - 1;
 		
-            $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber0[$lastRecord]' , '$species0[$lastRecord]', '$status0[$lastRecord]', '$sex0[$lastRecord]', '$age0[$lastRecord]', '$notes0[$lastRecord]', '$time', '$duration', '$weather', '$action0[$lastRecord]')";
             }
         
         
         if($numberFound1 == true){	
-            $sql = "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql = "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber0[0]' , '$species0[0]', '$status0[0]', '$sex0[0]', '$age0[0]', '$notes0[0]', '$time', '$duration', '$weather', '$action0[0]');";
 		
 		      for ($i = 1; $i <= ($numberFound0 - 2); $i++){
-                $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+                $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
                 VALUES ('$date' , '$volunteer', '$route' , '$siteNumber0[$i]' , '$species0[$i]', '$status0[$i]', '$sex0[$i]', '$age0[$i]', '$notes0[$i]', '$time', '$duration', '$weather', '$action0[$i]');";
 	           };
 	       		
             $lastRecord = $numberFound0 - 1;
 		
-            $sql .= "INSERT INTO step_one (date , volunteer, route, site, species,  deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species,  deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber0[$lastRecord]' , '$species0[$lastRecord]', '$status0[$lastRecord]', '$sex0[$lastRecord]', '$age0[$lastRecord]', '$notes0[$lastRecord]', '$time', '$duration', '$weather', '$action0[$lastRecord]');";
              
             }
@@ -382,12 +382,12 @@ for ($i = 0; $i < $numberFound1; $i++){
     if ($numberFound1 == "none"){
 
        	if($numberFound2 == false){
-		  $sql .= "INSERT INTO step_one (date, volunteer, route, site, species, start_time, duration, weather, notes)
+		  $sql .= "INSERT INTO PSFIST (date, volunteer, route, site, species, start_time, duration, weather, notes)
 		  VALUES ('$date' , '$volunteer', '$route' , '02' , 'none', '$time', '$duration', '$weather', '$noneNotes1')";
 		}
 		
 		if($numberFound2 == true){
-		  $sql .= "INSERT INTO step_one (date, volunteer, route, site, species, start_time, duration, weather, notes)
+		  $sql .= "INSERT INTO PSFIST (date, volunteer, route, site, species, start_time, duration, weather, notes)
 		  VALUES ('$date' , '$volunteer',  '$route' , '02' , 'none', '$time', '$duration', '$weather', '$noneNotes1');";
 		};
     }
@@ -396,12 +396,12 @@ for ($i = 0; $i < $numberFound1; $i++){
 	if ($numberFound1 == 1){
 	
 		if($numberFound2 == false){
-		  $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber1[0]' , '$species1[0]', '$status1[0]', '$sex1[0]', '$age1[0]', '$notes1[0]', '$time', '$duration', '$weather', '$action1[0]')";
 		}
 		
 		if($numberFound2 == true){
-		  $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber1[0]' , '$species1[0]', '$status1[0]', '$sex1[0]', '$age1[0]', '$notes1[0]', '$time', '$duration', '$weather', '$action1[0]');";
 		};
 		
@@ -412,19 +412,19 @@ for ($i = 0; $i < $numberFound1; $i++){
 	elseif ($numberFound1 == 2){
 	
 		if($numberFound2 == false){	
-		  $sql .= "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer',  '$route' , '$siteNumber1[0]' , '$species1[0]', '$status1[0]', '$sex1[0]', '$age1[0]', '$notes1[0]', '$time', '$duration', '$weather', '$action1[0]');";
 		
-		  $sql .= "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber1[1]' , '$species1[1]', '$status1[1]', '$sex1[1]', '$age1[1]', '$notes1[1]', '$time', '$duration', '$weather', '$action1[1]')";
 		}
         
 		
 		if($numberFound2 == true){	
-		  $sql .= "INSERT INTO step_one (date ,  volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date ,  volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber1[0]' , '$species1[0]', '$status1[0]', '$sex1[0]', '$age1[0]', '$notes1[0]', '$time', '$duration', '$weather', '$action1[0]');";
 		
-		  $sql .= "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber1[1]' , '$species1[1]', '$status1[1]', '$sex1[1]', '$age1[1]', '$notes1[1]', '$time', '$duration', '$weather', '$action1[1]');";
 		}	
 	}
@@ -435,33 +435,33 @@ for ($i = 0; $i < $numberFound1; $i++){
 	elseif ($numberFound1 > 2){
         
         if($numberFound2 == false){	
-            $sql .= "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql .= "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber1[0]' , '$species1[0]', '$status1[0]', '$sex1[0]', '$age1[0]', '$notes1[0]', '$time', '$duration', '$weather', '$action1[0]');";
 		
 		      for ($i = 1; $i <= ($numberFound1 - 2); $i++){
-                $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+                $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
                 VALUES ('$date' , '$volunteer', '$route' , '$siteNumber1[$i]' , '$species1[$i]', '$status1[$i]', '$sex1[$i]', '$age1[$i]', '$notes1[$i]', '$time', '$duration', '$weather', '$action1[$i]');";
 	           };
 	       		
             $lastRecord = $numberFound1 - 1;
 		
-            $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber1[$lastRecord]' , '$species1[$lastRecord]', '$status1[$lastRecord]', '$sex1[$lastRecord]', '$age1[$lastRecord]', '$notes1[$lastRecord]', '$time', '$duration', '$weather', '$action1[$lastRecord]')";
             }
         
         
         if($numberFound2 == true){	
-            $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber1[0]' , '$species1[0]', '$status1[0]', '$sex1[0]', '$age1[0]', '$notes1[0]', '$time', '$duration', '$weather', '$action1[0]');";
 		
 		      for ($i = 1; $i <= ($numberFound1 - 2); $i++){
-                $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+                $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
                 VALUES ('$date' , '$volunteer', '$route' , '$siteNumber1[$i]' , '$species1[$i]', '$status1[$i]', '$sex1[$i]', '$age1[$i]', '$notes1[$i]', '$time', '$duration', '$weather', '$action1[$i]');";
 	           };
 	       		
             $lastRecord = $numberFound1 - 1;
 		
-            $sql .= "INSERT INTO step_one (date , volunteer, route, site, species,  deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species,  deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber1[$lastRecord]' , '$species1[$lastRecord]', '$status1[$lastRecord]', '$sex1[$lastRecord]', '$age1[$lastRecord]', '$notes1[$lastRecord]', '$time', '$duration', '$weather', '$action1[$lastRecord]');";
              
             }
@@ -499,12 +499,12 @@ for ($i = 0; $i < $numberFound2; $i++){
     if ($numberFound2 == "none"){
 
        	if($numberFound3 == false){
-		  $sql .= "INSERT INTO step_one (date, volunteer, route, site, species, start_time, duration, weather, notes)
+		  $sql .= "INSERT INTO PSFIST (date, volunteer, route, site, species, start_time, duration, weather, notes)
 		  VALUES ('$date' , '$volunteer', '$route' , '03' , 'none', '$time', '$duration', '$weather', '$noneNotes2')";
 		}
 		
 		if($numberFound3 == true){
-		  $sql .= "INSERT INTO step_one (date, volunteer, route, site, species, start_time, duration, weather, notes)
+		  $sql .= "INSERT INTO PSFIST (date, volunteer, route, site, species, start_time, duration, weather, notes)
 		  VALUES ('$date' , '$volunteer',  '$route' , '03' , 'none', '$time', '$duration', '$weather', '$noneNotes2');";
 		};
     }
@@ -513,12 +513,12 @@ for ($i = 0; $i < $numberFound2; $i++){
 	if ($numberFound2 == 1){
 	
 		if($numberFound3 == false){
-		  $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber2[0]' , '$species2[0]', '$status2[0]', '$sex2[0]', '$age2[0]', '$notes2[0]', '$time', '$duration', '$weather', '$action2[0]')";
 		}
 		
 		if($numberFound3 == true){
-		  $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber2[0]' , '$species2[0]', '$status2[0]', '$sex2[0]', '$age2[0]', '$notes2[0]', '$time', '$duration', '$weather', '$action2[0]');";
 		};
 		
@@ -529,19 +529,19 @@ for ($i = 0; $i < $numberFound2; $i++){
 	elseif ($numberFound2 == 2){
 	
 		if($numberFound3 == false){	
-		  $sql .= "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer',  '$route' , '$siteNumber2[0]' , '$species2[0]', '$status2[0]', '$sex2[0]', '$age2[0]', '$notes2[0]', '$time', '$duration', '$weather', '$action2[0]');";
 		
-		  $sql .= "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber2[1]' , '$species2[1]', '$status2[1]', '$sex2[1]', '$age2[1]', '$notes2[1]', '$time', '$duration', '$weather', '$action2[1]')";
 		}
         
 		
 		if($numberFound3 == true){	
-		  $sql .= "INSERT INTO step_one (date ,  volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date ,  volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber2[0]' , '$species2[0]', '$status2[0]', '$sex2[0]', '$age2[0]', '$notes2[0]', '$time', '$duration', '$weather', '$action2[0]');";
 		
-		  $sql .= "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber2[1]' , '$species2[1]', '$status2[1]', '$sex2[1]', '$age2[1]', '$notes2[1]', '$time', '$duration', '$weather', '$action2[1]');";
 		}	
 	}
@@ -552,33 +552,33 @@ for ($i = 0; $i < $numberFound2; $i++){
 	elseif ($numberFound2 > 2){
         
         if($numberFound3 == false){	
-            $sql .= "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql .= "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber2[0]' , '$species2[0]', '$status2[0]', '$sex2[0]', '$age2[0]', '$notes2[0]', '$time', '$duration', '$weather', '$action2[0]');";
 		
 		      for ($i = 1; $i <= ($numberFound2 - 2); $i++){
-                $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+                $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
                 VALUES ('$date' , '$volunteer', '$route' , '$siteNumber2[$i]' , '$species2[$i]', '$status2[$i]', '$sex2[$i]', '$age2[$i]', '$notes2[$i]', '$time', '$duration', '$weather', '$action2[$i]');";
 	           };
 	       		
             $lastRecord = $numberFound2 - 1;
 		
-            $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber2[$lastRecord]' , '$species2[$lastRecord]', '$status2[$lastRecord]', '$sex2[$lastRecord]', '$age2[$lastRecord]', '$notes2[$lastRecord]', '$time', '$duration', '$weather', '$action2[$lastRecord]')";
             }
         
         
         if($numberFound3 == true){	
-            $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber2[0]' , '$species2[0]', '$status2[0]', '$sex2[0]', '$age2[0]', '$notes2[0]', '$time', '$duration', '$weather', '$action2[0]');";
 		
 		      for ($i = 1; $i <= ($numberFound2 - 2); $i++){
-                $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+                $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
                 VALUES ('$date' , '$volunteer', '$route' , '$siteNumber2[$i]' , '$species2[$i]', '$status2[$i]', '$sex2[$i]', '$age2[$i]', '$notes2[$i]', '$time', '$duration', '$weather', '$action2[$i]');";
 	           };
 	       		
             $lastRecord = $numberFound2 - 1;
 		
-            $sql .= "INSERT INTO step_one (date , volunteer, route, site, species,  deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species,  deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber2[$lastRecord]' , '$species2[$lastRecord]', '$status2[$lastRecord]', '$sex2[$lastRecord]', '$age2[$lastRecord]', '$notes2[$lastRecord]', '$time', '$duration', '$weather', '$action2[$lastRecord]');";
              
             }
@@ -618,12 +618,12 @@ for ($i = 0; $i < $numberFound3; $i++){
   if ($numberFound3 == "none"){
 
        	if($numberFound4 == false){
-		  $sql .= "INSERT INTO step_one (date, volunteer, route, site, species, start_time, duration, weather, notes)
+		  $sql .= "INSERT INTO PSFIST (date, volunteer, route, site, species, start_time, duration, weather, notes)
 		  VALUES ('$date' , '$volunteer', '$route' , '04' , 'none', '$time', '$duration', '$weather', '$noneNotes3')";
 		}
 		
 		if($numberFound4 == true){
-		  $sql .= "INSERT INTO step_one (date, volunteer, route, site, species, start_time, duration, weather, notes)
+		  $sql .= "INSERT INTO PSFIST (date, volunteer, route, site, species, start_time, duration, weather, notes)
 		  VALUES ('$date' , '$volunteer',  '$route' , '04' , 'none', '$time', '$duration', '$weather', '$noneNotes3');";
 		};
     }
@@ -632,12 +632,12 @@ for ($i = 0; $i < $numberFound3; $i++){
 	if ($numberFound3 == 1){
 	
 		if($numberFound4 == false){
-		  $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber3[0]' , '$species3[0]', '$status3[0]', '$sex3[0]', '$age3[0]', '$notes3[0]', '$time', '$duration', '$weather', '$action3[0]')";
 		}
 		
 		if($numberFound4 == true){
-		  $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber3[0]' , '$species3[0]', '$status3[0]', '$sex3[0]', '$age3[0]', '$notes3[0]', '$time', '$duration', '$weather', '$action3[0]');";
 		};
 		
@@ -648,19 +648,19 @@ for ($i = 0; $i < $numberFound3; $i++){
 	elseif ($numberFound3 == 2){
 	
 		if($numberFound4 == false){	
-		  $sql .= "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer',  '$route' , '$siteNumber3[0]' , '$species3[0]', '$status3[0]', '$sex3[0]', '$age3[0]', '$notes3[0]', '$time', '$duration', '$weather', '$action3[0]');";
 		
-		  $sql .= "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber3[1]' , '$species3[1]', '$status3[1]', '$sex3[1]', '$age3[1]', '$notes3[1]', '$time', '$duration', '$weather', '$action3[1]')";
 		}
         
 		
 		if($numberFound4 == true){	
-		  $sql .= "INSERT INTO step_one (date ,  volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date ,  volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber3[0]' , '$species3[0]', '$status3[0]', '$sex3[0]', '$age3[0]', '$notes3[0]', '$time', '$duration', '$weather', '$action3[0]');";
 		
-		  $sql .= "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber3[1]' , '$species3[1]', '$status3[1]', '$sex3[1]', '$age3[1]', '$notes3[1]', '$time', '$duration', '$weather', '$action3[1]');";
 		}	
 	}
@@ -671,33 +671,33 @@ for ($i = 0; $i < $numberFound3; $i++){
 	elseif ($numberFound3 > 2){
         
         if($numberFound4 == false){	
-            $sql .= "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql .= "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber3[0]' , '$species3[0]', '$status3[0]', '$sex3[0]', '$age3[0]', '$notes3[0]', '$time', '$duration', '$weather', '$action3[0]');";
 		
 		      for ($i = 1; $i <= ($numberFound3 - 2); $i++){
-                $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+                $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
                 VALUES ('$date' , '$volunteer', '$route' , '$siteNumber3[$i]' , '$species3[$i]', '$status3[$i]', '$sex3[$i]', '$age3[$i]', '$notes3[$i]', '$time', '$duration', '$weather', '$action3[$i]');";
 	           };
 	       		
             $lastRecord = $numberFound3 - 1;
 		
-            $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber3[$lastRecord]' , '$species3[$lastRecord]', '$status3[$lastRecord]', '$sex3[$lastRecord]', '$age3[$lastRecord]', '$notes3[$lastRecord]', '$time', '$duration', '$weather', '$action3[$lastRecord]')";
             }
         
         
         if($numberFound4 == true){	
-            $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber3[0]' , '$species3[0]', '$status3[0]', '$sex3[0]', '$age3[0]', '$notes3[0]', '$time', '$duration', '$weather', '$action3[0]');";
 		
 		      for ($i = 1; $i <= ($numberFound3 - 2); $i++){
-                $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+                $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
                 VALUES ('$date' , '$volunteer', '$route' , '$siteNumber3[$i]' , '$species3[$i]', '$status3[$i]', '$sex3[$i]', '$age3[$i]', '$notes3[$i]', '$time', '$duration', '$weather', '$action3[$i]');";
 	           };
 	       		
             $lastRecord = $numberFound3 - 1;
 		
-            $sql .= "INSERT INTO step_one (date , volunteer, route, site, species,  deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species,  deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber3[$lastRecord]' , '$species3[$lastRecord]', '$status3[$lastRecord]', '$sex3[$lastRecord]', '$age3[$lastRecord]', '$notes3[$lastRecord]', '$time', '$duration', '$weather', '$action3[$lastRecord]');";
              
             }
@@ -734,12 +734,12 @@ for ($i = 0; $i < $numberFound4; $i++){
   if ($numberFound4 == "none"){
 
        	if($numberFound5 == false){
-		  $sql .= "INSERT INTO step_one (date, volunteer, route, site, species, start_time, duration, weather, notes)
+		  $sql .= "INSERT INTO PSFIST (date, volunteer, route, site, species, start_time, duration, weather, notes)
 		  VALUES ('$date' , '$volunteer', '$route' , '05' , 'none', '$time', '$duration', '$weather', '$noneNotes4')";
 		}
 		
 		if($numberFound5 == true){
-		  $sql .= "INSERT INTO step_one (date, volunteer, route, site, species, start_time, duration, weather, notes)
+		  $sql .= "INSERT INTO PSFIST (date, volunteer, route, site, species, start_time, duration, weather, notes)
 		  VALUES ('$date' , '$volunteer',  '$route' , '05' , 'none', '$time', '$duration', '$weather', '$noneNotes4');";
 		};
     }
@@ -748,12 +748,12 @@ for ($i = 0; $i < $numberFound4; $i++){
 	if ($numberFound4 == 1){
 	
 		if($numberFound5 == false){
-		  $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber4[0]' , '$species4[0]', '$status4[0]', '$sex4[0]', '$age4[0]', '$notes4[0]', '$time', '$duration', '$weather', '$action4[0]')";
 		}
 		
 		if($numberFound5 == true){
-		  $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber4[0]' , '$species4[0]', '$status4[0]', '$sex4[0]', '$age4[0]', '$notes4[0]', '$time', '$duration', '$weather', '$action4[0]');";
 		};
 		
@@ -764,19 +764,19 @@ for ($i = 0; $i < $numberFound4; $i++){
 	elseif ($numberFound4 == 2){
 	
 		if($numberFound5 == false){	
-		  $sql .= "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer',  '$route' , '$siteNumber4[0]' , '$species4[0]', '$status4[0]', '$sex4[0]', '$age4[0]', '$notes4[0]', '$time', '$duration', '$weather', '$action4[0]');";
 		
-		  $sql .= "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber4[1]' , '$species4[1]', '$status4[1]', '$sex4[1]', '$age4[1]', '$notes4[1]', '$time', '$duration', '$weather', '$action4[1]')";
 		}
         
 		
 		if($numberFound5 == true){	
-		  $sql .= "INSERT INTO step_one (date ,  volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date ,  volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber4[0]' , '$species4[0]', '$status4[0]', '$sex4[0]', '$age4[0]', '$notes4[0]', '$time', '$duration', '$weather', '$action4[0]');";
 		
-		  $sql .= "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber4[1]' , '$species4[1]', '$status4[1]', '$sex4[1]', '$age4[1]', '$notes4[1]', '$time', '$duration', '$weather', '$action4[1]');";
 		}	
 	}
@@ -787,33 +787,33 @@ for ($i = 0; $i < $numberFound4; $i++){
 	elseif ($numberFound4 > 2){
         
         if($numberFound5 == false){	
-            $sql .= "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql .= "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber4[0]' , '$species4[0]', '$status4[0]', '$sex4[0]', '$age4[0]', '$notes4[0]', '$time', '$duration', '$weather', '$action4[0]');";
 		
 		      for ($i = 1; $i <= ($numberFound4 - 2); $i++){
-                $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+                $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
                 VALUES ('$date' , '$volunteer', '$route' , '$siteNumber4[$i]' , '$species4[$i]', '$status4[$i]', '$sex4[$i]', '$age4[$i]', '$notes4[$i]', '$time', '$duration', '$weather', '$action4[$i]');";
 	           };
 	       		
             $lastRecord = $numberFound4 - 1;
 		
-            $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber4[$lastRecord]' , '$species4[$lastRecord]', '$status4[$lastRecord]', '$sex4[$lastRecord]', '$age4[$lastRecord]', '$notes4[$lastRecord]', '$time', '$duration', '$weather', '$action4[$lastRecord]')";
             }
         
         
         if($numberFound5 == true){	
-            $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber4[0]' , '$species4[0]', '$status4[0]', '$sex4[0]', '$age4[0]', '$notes4[0]', '$time', '$duration', '$weather', '$action4[0]');";
 		
 		      for ($i = 1; $i <= ($numberFound4 - 2); $i++){
-                $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+                $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
                 VALUES ('$date' , '$volunteer', '$route' , '$siteNumber4[$i]' , '$species4[$i]', '$status4[$i]', '$sex4[$i]', '$age4[$i]', '$notes4[$i]', '$time', '$duration', '$weather', '$action4[$i]');";
 	           };
 	       		
             $lastRecord = $numberFound4 - 1;
 		
-            $sql .= "INSERT INTO step_one (date , volunteer, route, site, species,  deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species,  deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber4[$lastRecord]' , '$species4[$lastRecord]', '$status4[$lastRecord]', '$sex4[$lastRecord]', '$age4[$lastRecord]', '$notes4[$lastRecord]', '$time', '$duration', '$weather', '$action4[$lastRecord]');";
              
             }
@@ -848,12 +848,12 @@ for ($i = 0; $i < $numberFound5; $i++){
   if ($numberFound5 == "none"){
 
        	if($numberFound6 == false){
-		  $sql .= "INSERT INTO step_one (date, volunteer, route, site, species, start_time, duration, weather, notes)
+		  $sql .= "INSERT INTO PSFIST (date, volunteer, route, site, species, start_time, duration, weather, notes)
 		  VALUES ('$date' , '$volunteer', '$route' , '06' , 'none', '$time', '$duration', '$weather', '$noneNotes5')";
 		}
 		
 		if($numberFound6 == true){
-		  $sql .= "INSERT INTO step_one (date, volunteer, route, site, species, start_time, duration, weather, notes)
+		  $sql .= "INSERT INTO PSFIST (date, volunteer, route, site, species, start_time, duration, weather, notes)
 		  VALUES ('$date' , '$volunteer',  '$route' , '06' , 'none', '$time', '$duration', '$weather', '$noneNotes5');";
 		};
     }
@@ -862,12 +862,12 @@ for ($i = 0; $i < $numberFound5; $i++){
 	if ($numberFound5 == 1){
 	
 		if($numberFound6 == false){
-		  $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber5[0]' , '$species5[0]', '$status5[0]', '$sex5[0]', '$age5[0]', '$notes5[0]', '$time', '$duration', '$weather', '$action5[0]')";
 		}
 		
 		if($numberFound6 == true){
-		  $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber5[0]' , '$species5[0]', '$status5[0]', '$sex5[0]', '$age5[0]', '$notes5[0]', '$time', '$duration', '$weather', '$action5[0]');";
 		};
 		
@@ -878,19 +878,19 @@ for ($i = 0; $i < $numberFound5; $i++){
 	elseif ($numberFound5 == 2){
 	
 		if($numberFound6 == false){	
-		  $sql .= "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer',  '$route' , '$siteNumber5[0]' , '$species5[0]', '$status5[0]', '$sex5[0]', '$age5[0]', '$notes5[0]', '$time', '$duration', '$weather', '$action5[0]');";
 		
-		  $sql .= "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber5[1]' , '$species5[1]', '$status5[1]', '$sex5[1]', '$age5[1]', '$notes5[1]', '$time', '$duration', '$weather', '$action5[1]')";
 		}
         
 		
 		if($numberFound6 == true){	
-		  $sql .= "INSERT INTO step_one (date ,  volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date ,  volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber5[0]' , '$species5[0]', '$status5[0]', '$sex5[0]', '$age5[0]', '$notes5[0]', '$time', '$duration', '$weather', '$action5[0]');";
 		
-		  $sql .= "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber5[1]' , '$species5[1]', '$status5[1]', '$sex5[1]', '$age5[1]', '$notes5[1]', '$time', '$duration', '$weather', '$action5[1]');";
 		}	
 	}
@@ -901,33 +901,33 @@ for ($i = 0; $i < $numberFound5; $i++){
 	elseif ($numberFound5 > 2){
         
         if($numberFound6 == false){	
-            $sql .= "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql .= "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber5[0]' , '$species5[0]', '$status5[0]', '$sex5[0]', '$age5[0]', '$notes5[0]', '$time', '$duration', '$weather', '$action5[0]');";
 		
 		      for ($i = 1; $i <= ($numberFound5 - 2); $i++){
-                $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+                $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
                 VALUES ('$date' , '$volunteer', '$route' , '$siteNumber5[$i]' , '$species5[$i]', '$status5[$i]', '$sex5[$i]', '$age5[$i]', '$notes5[$i]', '$time', '$duration', '$weather', '$action5[$i]');";
 	           };
 	       		
             $lastRecord = $numberFound5 - 1;
 		
-            $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber5[$lastRecord]' , '$species5[$lastRecord]', '$status5[$lastRecord]', '$sex5[$lastRecord]', '$age5[$lastRecord]', '$notes5[$lastRecord]', '$time', '$duration', '$weather', '$action5[$lastRecord]')";
             }
         
         
         if($numberFound6 == true){	
-            $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber5[0]' , '$species5[0]', '$status5[0]', '$sex5[0]', '$age5[0]', '$notes5[0]', '$time', '$duration', '$weather', '$action5[0]');";
 		
 		      for ($i = 1; $i <= ($numberFound5 - 2); $i++){
-                $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+                $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
                 VALUES ('$date' , '$volunteer', '$route' , '$siteNumber5[$i]' , '$species5[$i]', '$status5[$i]', '$sex5[$i]', '$age5[$i]', '$notes5[$i]', '$time', '$duration', '$weather', '$action5[$i]');";
 	           };
 	       		
             $lastRecord = $numberFound5 - 1;
 		
-            $sql .= "INSERT INTO step_one (date , volunteer, route, site, species,  deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species,  deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber5[$lastRecord]' , '$species5[$lastRecord]', '$status5[$lastRecord]', '$sex5[$lastRecord]', '$age5[$lastRecord]', '$notes5[$lastRecord]', '$time', '$duration', '$weather', '$action5[$lastRecord]');";
              
             }
@@ -970,12 +970,12 @@ for ($i = 0; $i < $numberFound6; $i++){
   if ($numberFound6 == "none"){
 
        	if($numberFound7 == false){
-		  $sql .= "INSERT INTO step_one (date, volunteer, route, site, species, start_time, duration, weather, notes)
+		  $sql .= "INSERT INTO PSFIST (date, volunteer, route, site, species, start_time, duration, weather, notes)
 		  VALUES ('$date' , '$volunteer', '$route' , '07' , 'none', '$time', '$duration', '$weather', '$noneNotes6')";
 		}
 		
 		if($numberFound7 == true){
-		  $sql .= "INSERT INTO step_one (date, volunteer, route, site, species, start_time, duration, weather, notes)
+		  $sql .= "INSERT INTO PSFIST (date, volunteer, route, site, species, start_time, duration, weather, notes)
 		  VALUES ('$date' , '$volunteer',  '$route' , '07' , 'none', '$time', '$duration', '$weather', '$noneNotes6');";
 		};
     }
@@ -984,12 +984,12 @@ for ($i = 0; $i < $numberFound6; $i++){
 	if ($numberFound6 == 1){
 	
 		if($numberFound7 == false){
-		  $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber6[0]' , '$species6[0]', '$status6[0]', '$sex6[0]', '$age6[0]', '$notes6[0]', '$time', '$duration', '$weather', '$action6[0]')";
 		}
 		
 		if($numberFound7 == true){
-		  $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber6[0]' , '$species6[0]', '$status6[0]', '$sex6[0]', '$age6[0]', '$notes6[0]', '$time', '$duration', '$weather', '$action6[0]');";
 		};
 		
@@ -1000,19 +1000,19 @@ for ($i = 0; $i < $numberFound6; $i++){
 	elseif ($numberFound6 == 2){
 	
 		if($numberFound7 == false){	
-		  $sql .= "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer',  '$route' , '$siteNumber6[0]' , '$species6[0]', '$status6[0]', '$sex6[0]', '$age6[0]', '$notes6[0]', '$time', '$duration', '$weather', '$action6[0]');";
 		
-		  $sql .= "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber6[1]' , '$species6[1]', '$status6[1]', '$sex6[1]', '$age6[1]', '$notes6[1]', '$time', '$duration', '$weather', '$action6[1]')";
 		}
         
 		
 		if($numberFound7 == true){	
-		  $sql .= "INSERT INTO step_one (date ,  volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date ,  volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber6[0]' , '$species6[0]', '$status6[0]', '$sex6[0]', '$age6[0]', '$notes6[0]', '$time', '$duration', '$weather', '$action6[0]');";
 		
-		  $sql .= "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber6[1]' , '$species6[1]', '$status6[1]', '$sex6[1]', '$age6[1]', '$notes6[1]', '$time', '$duration', '$weather', '$action6[1]');";
 		}	
 	}
@@ -1023,33 +1023,33 @@ for ($i = 0; $i < $numberFound6; $i++){
 	elseif ($numberFound6 > 2){
         
         if($numberFound7 == false){	
-            $sql .= "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql .= "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber6[0]' , '$species6[0]', '$status6[0]', '$sex6[0]', '$age6[0]', '$notes6[0]', '$time', '$duration', '$weather', '$action6[0]');";
 		
 		      for ($i = 1; $i <= ($numberFound6 - 2); $i++){
-                $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+                $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
                 VALUES ('$date' , '$volunteer', '$route' , '$siteNumber6[$i]' , '$species6[$i]', '$status6[$i]', '$sex6[$i]', '$age6[$i]', '$notes6[$i]', '$time', '$duration', '$weather', '$action6[$i]');";
 	           };
 	       		
             $lastRecord = $numberFound6 - 1;
 		
-            $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber6[$lastRecord]' , '$species6[$lastRecord]', '$status6[$lastRecord]', '$sex6[$lastRecord]', '$age6[$lastRecord]', '$notes6[$lastRecord]', '$time', '$duration', '$weather', '$action6[$lastRecord]')";
             }
         
         
         if($numberFound7 == true){	
-            $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber6[0]' , '$species6[0]', '$status6[0]', '$sex6[0]', '$age6[0]', '$notes6[0]', '$time', '$duration', '$weather', '$action6[0]');";
 		
 		      for ($i = 1; $i <= ($numberFound6 - 2); $i++){
-                $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+                $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
                 VALUES ('$date' , '$volunteer', '$route' , '$siteNumber6[$i]' , '$species6[$i]', '$status6[$i]', '$sex6[$i]', '$age6[$i]', '$notes6[$i]', '$time', '$duration', '$weather', '$action6[$i]');";
 	           };
 	       		
             $lastRecord = $numberFound6 - 1;
 		
-            $sql .= "INSERT INTO step_one (date , volunteer, route, site, species,  deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species,  deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber6[$lastRecord]' , '$species6[$lastRecord]', '$status6[$lastRecord]', '$sex6[$lastRecord]', '$age6[$lastRecord]', '$notes6[$lastRecord]', '$time', '$duration', '$weather', '$action6[$lastRecord]');";
              
             }
@@ -1093,12 +1093,12 @@ for ($i = 0; $i < $numberFound7; $i++){
   if ($numberFound7 == "none"){
 
        	if($numberFound8 == false){
-		  $sql .= "INSERT INTO step_one (date, volunteer, route, site, species, start_time, duration, weather, notes)
+		  $sql .= "INSERT INTO PSFIST (date, volunteer, route, site, species, start_time, duration, weather, notes)
 		  VALUES ('$date' , '$volunteer', '$route' , '08' , 'none', '$time', '$duration', '$weather', '$noneNotes7')";
 		}
 		
 		if($numberFound8 == true){
-		  $sql .= "INSERT INTO step_one (date, volunteer, route, site, species, start_time, duration, weather, notes)
+		  $sql .= "INSERT INTO PSFIST (date, volunteer, route, site, species, start_time, duration, weather, notes)
 		  VALUES ('$date' , '$volunteer',  '$route' , '08' , 'none', '$time', '$duration', '$weather', '$noneNotes7');";
 		};
     }
@@ -1107,12 +1107,12 @@ for ($i = 0; $i < $numberFound7; $i++){
 	if ($numberFound7 == 1){
 	
 		if($numberFound8 == false){
-		  $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber7[0]' , '$species7[0]', '$status7[0]', '$sex7[0]', '$age7[0]', '$notes7[0]', '$time', '$duration', '$weather', '$action7[0]')";
 		}
 		
 		if($numberFound8 == true){
-		  $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber7[0]' , '$species7[0]', '$status7[0]', '$sex7[0]', '$age7[0]', '$notes7[0]', '$time', '$duration', '$weather', '$action7[0]');";
 		};
 		
@@ -1123,19 +1123,19 @@ for ($i = 0; $i < $numberFound7; $i++){
 	elseif ($numberFound7 == 2){
 	
 		if($numberFound8 == false){	
-		  $sql .= "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer',  '$route' , '$siteNumber7[0]' , '$species7[0]', '$status7[0]', '$sex7[0]', '$age7[0]', '$notes7[0]', '$time', '$duration', '$weather', '$action7[0]');";
 		
-		  $sql .= "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber7[1]' , '$species7[1]', '$status7[1]', '$sex7[1]', '$age7[1]', '$notes7[1]', '$time', '$duration', '$weather', '$action7[1]')";
 		}
         
 		
 		if($numberFound8 == true){	
-		  $sql .= "INSERT INTO step_one (date ,  volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date ,  volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber7[0]' , '$species7[0]', '$status7[0]', '$sex7[0]', '$age7[0]', '$notes7[0]', '$time', '$duration', '$weather', '$action7[0]');";
 		
-		  $sql .= "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber7[1]' , '$species7[1]', '$status7[1]', '$sex7[1]', '$age7[1]', '$notes7[1]', '$time', '$duration', '$weather', '$action7[1]');";
 		}	
 	}
@@ -1146,33 +1146,33 @@ for ($i = 0; $i < $numberFound7; $i++){
 	elseif ($numberFound7 > 2){
         
         if($numberFound8 == false){	
-            $sql .= "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql .= "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber7[0]' , '$species7[0]', '$status7[0]', '$sex7[0]', '$age7[0]', '$notes7[0]', '$time', '$duration', '$weather', '$action7[0]');";
 		
 		      for ($i = 1; $i <= ($numberFound7 - 2); $i++){
-                $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+                $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
                 VALUES ('$date' , '$volunteer', '$route' , '$siteNumber7[$i]' , '$species7[$i]', '$status7[$i]', '$sex7[$i]', '$age7[$i]', '$notes7[$i]', '$time', '$duration', '$weather', '$action7[$i]');";
 	           };
 	       		
             $lastRecord = $numberFound7 - 1;
 		
-            $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber7[$lastRecord]' , '$species7[$lastRecord]', '$status7[$lastRecord]', '$sex7[$lastRecord]', '$age7[$lastRecord]', '$notes7[$lastRecord]', '$time', '$duration', '$weather', '$action7[$lastRecord]')";
             }
         
         
         if($numberFound8 == true){	
-            $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber7[0]' , '$species7[0]', '$status7[0]', '$sex7[0]', '$age7[0]', '$notes7[0]', '$time', '$duration', '$weather', '$action7[0]');";
 		
 		      for ($i = 1; $i <= ($numberFound7 - 2); $i++){
-                $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+                $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
                 VALUES ('$date' , '$volunteer', '$route' , '$siteNumber7[$i]' , '$species7[$i]', '$status7[$i]', '$sex7[$i]', '$age7[$i]', '$notes7[$i]', '$time', '$duration', '$weather', '$action7[$i]');";
 	           };
 	       		
             $lastRecord = $numberFound7 - 1;
 		
-            $sql .= "INSERT INTO step_one (date , volunteer, route, site, species,  deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species,  deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber7[$lastRecord]' , '$species7[$lastRecord]', '$status7[$lastRecord]', '$sex7[$lastRecord]', '$age7[$lastRecord]', '$notes7[$lastRecord]', '$time', '$duration', '$weather', '$action7[$lastRecord]');";
              
             }
@@ -1218,12 +1218,12 @@ for ($i = 0; $i < $numberFound8; $i++){
   if ($numberFound8 == "none"){
 
        	if($numberFound9 == false){
-		  $sql .= "INSERT INTO step_one (date, volunteer, route, site, species, start_time, duration, weather, notes)
+		  $sql .= "INSERT INTO PSFIST (date, volunteer, route, site, species, start_time, duration, weather, notes)
 		  VALUES ('$date' , '$volunteer', '$route' , '09' , 'none', '$time', '$duration', '$weather', '$noneNotes8')";
 		}
 		
 		if($numberFound9 == true){
-		  $sql .= "INSERT INTO step_one (date, volunteer, route, site, species, start_time, duration, weather, notes)
+		  $sql .= "INSERT INTO PSFIST (date, volunteer, route, site, species, start_time, duration, weather, notes)
 		  VALUES ('$date' , '$volunteer',  '$route' , '09' , 'none', '$time', '$duration', '$weather', '$noneNotes8');";
 		};
     }
@@ -1232,12 +1232,12 @@ for ($i = 0; $i < $numberFound8; $i++){
 	if ($numberFound8 == 1){
 	
 		if($numberFound9 == false){
-		  $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber8[0]' , '$species8[0]', '$status8[0]', '$sex8[0]', '$age8[0]', '$notes8[0]', '$time', '$duration', '$weather', '$action8[0]')";
 		}
 		
 		if($numberFound9 == true){
-		  $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber8[0]' , '$species8[0]', '$status8[0]', '$sex8[0]', '$age8[0]', '$notes8[0]', '$time', '$duration', '$weather', '$action8[0]');";
 		};
 		
@@ -1248,19 +1248,19 @@ for ($i = 0; $i < $numberFound8; $i++){
 	elseif ($numberFound8 == 2){
 	
 		if($numberFound9 == false){	
-		  $sql .= "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer',  '$route' , '$siteNumber8[0]' , '$species8[0]', '$status8[0]', '$sex8[0]', '$age8[0]', '$notes8[0]', '$time', '$duration', '$weather', '$action8[0]');";
 		
-		  $sql .= "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber8[1]' , '$species8[1]', '$status8[1]', '$sex8[1]', '$age8[1]', '$notes8[1]', '$time', '$duration', '$weather', '$action8[1]')";
 		}
         
 		
 		if($numberFound9 == true){	
-		  $sql .= "INSERT INTO step_one (date ,  volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date ,  volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber8[0]' , '$species8[0]', '$status8[0]', '$sex8[0]', '$age8[0]', '$notes8[0]', '$time', '$duration', '$weather', '$action8[0]');";
 		
-		  $sql .= "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber8[1]' , '$species8[1]', '$status8[1]', '$sex8[1]', '$age8[1]', '$notes8[1]', '$time', '$duration', '$weather', '$action8[1]');";
 		}	
 	}
@@ -1271,33 +1271,33 @@ for ($i = 0; $i < $numberFound8; $i++){
 	elseif ($numberFound8 > 2){
         
         if($numberFound9 == false){	
-            $sql .= "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql .= "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber8[0]' , '$species8[0]', '$status8[0]', '$sex8[0]', '$age8[0]', '$notes8[0]', '$time', '$duration', '$weather', '$action8[0]');";
 		
 		      for ($i = 1; $i <= ($numberFound8 - 2); $i++){
-                $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+                $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
                 VALUES ('$date' , '$volunteer', '$route' , '$siteNumber8[$i]' , '$species8[$i]', '$status8[$i]', '$sex8[$i]', '$age8[$i]', '$notes8[$i]', '$time', '$duration', '$weather', '$action8[$i]');";
 	           };
 	       		
             $lastRecord = $numberFound8 - 1;
 		
-            $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber8[$lastRecord]' , '$species8[$lastRecord]', '$status8[$lastRecord]', '$sex8[$lastRecord]', '$age8[$lastRecord]', '$notes8[$lastRecord]', '$time', '$duration', '$weather', '$action8[$lastRecord]')";
             }
         
         
         if($numberFound9 == true){	
-            $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber8[0]' , '$species8[0]', '$status8[0]', '$sex8[0]', '$age8[0]', '$notes8[0]', '$time', '$duration', '$weather', '$action8[0]');";
 		
 		      for ($i = 1; $i <= ($numberFound8 - 2); $i++){
-                $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+                $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
                 VALUES ('$date' , '$volunteer', '$route' , '$siteNumber8[$i]' , '$species8[$i]', '$status8[$i]', '$sex8[$i]', '$age8[$i]', '$notes8[$i]', '$time', '$duration', '$weather', '$action8[$i]');";
 	           };
 	       		
             $lastRecord = $numberFound8 - 1;
 		
-            $sql .= "INSERT INTO step_one (date , volunteer, route, site, species,  deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species,  deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber8[$lastRecord]' , '$species8[$lastRecord]', '$status8[$lastRecord]', '$sex8[$lastRecord]', '$age8[$lastRecord]', '$notes8[$lastRecord]', '$time', '$duration', '$weather', '$action8[$lastRecord]');";
              
             }
@@ -1336,12 +1336,12 @@ for ($i = 0; $i < $numberFound9; $i++){
   if ($numberFound9 == "none"){
 
        	if($numberFound10 == false){
-		  $sql .= "INSERT INTO step_one (date, volunteer, route, site, species, start_time, duration, weather, notes)
+		  $sql .= "INSERT INTO PSFIST (date, volunteer, route, site, species, start_time, duration, weather, notes)
 		  VALUES ('$date' , '$volunteer', '$route' , '10' , 'none', '$time', '$duration', '$weather', '$noneNotes9')";
 		}
 		
 		if($numberFound10 == true){
-		  $sql .= "INSERT INTO step_one (date, volunteer, route, site, species, start_time, duration, weather, notes)
+		  $sql .= "INSERT INTO PSFIST (date, volunteer, route, site, species, start_time, duration, weather, notes)
 		  VALUES ('$date' , '$volunteer',  '$route' , '10' , 'none', '$time', '$duration', '$weather', '$noneNotes9');";
 		};
     }
@@ -1350,12 +1350,12 @@ for ($i = 0; $i < $numberFound9; $i++){
 	if ($numberFound9 == 1){
 	
 		if($numberFound10 == false){
-		  $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber9[0]' , '$species9[0]', '$status9[0]', '$sex9[0]', '$age9[0]', '$notes9[0]', '$time', '$duration', '$weather', '$action9[0]')";
 		}
 		
 		if($numberFound10 == true){
-		  $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber9[0]' , '$species9[0]', '$status9[0]', '$sex9[0]', '$age9[0]', '$notes9[0]', '$time', '$duration', '$weather', '$action9[0]');";
 		};
 		
@@ -1366,19 +1366,19 @@ for ($i = 0; $i < $numberFound9; $i++){
 	elseif ($numberFound9 == 2){
 	
 		if($numberFound10 == false){	
-		  $sql .= "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer',  '$route' , '$siteNumber9[0]' , '$species9[0]', '$status9[0]', '$sex9[0]', '$age9[0]', '$notes9[0]', '$time', '$duration', '$weather', '$action9[0]');";
 		
-		  $sql .= "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber9[1]' , '$species9[1]', '$status9[1]', '$sex9[1]', '$age9[1]', '$notes9[1]', '$time', '$duration', '$weather', '$action9[1]')";
 		}
         
 		
 		if($numberFound10 == true){	
-		  $sql .= "INSERT INTO step_one (date ,  volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date ,  volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber9[0]' , '$species9[0]', '$status9[0]', '$sex9[0]', '$age9[0]', '$notes9[0]', '$time', '$duration', '$weather', '$action9[0]');";
 		
-		  $sql .= "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber9[1]' , '$species9[1]', '$status9[1]', '$sex9[1]', '$age9[1]', '$notes9[1]', '$time', '$duration', '$weather', '$action9[1]');";
 		}	
 	}
@@ -1389,33 +1389,33 @@ for ($i = 0; $i < $numberFound9; $i++){
 	elseif ($numberFound9 > 2){
         
         if($numberFound10 == false){	
-            $sql .= "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql .= "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber9[0]' , '$species9[0]', '$status9[0]', '$sex9[0]', '$age9[0]', '$notes9[0]', '$time', '$duration', '$weather', '$action9[0]');";
 		
 		      for ($i = 1; $i <= ($numberFound9 - 2); $i++){
-                $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+                $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
                 VALUES ('$date' , '$volunteer', '$route' , '$siteNumber9[$i]' , '$species9[$i]', '$status9[$i]', '$sex9[$i]', '$age9[$i]', '$notes9[$i]', '$time', '$duration', '$weather', '$action9[$i]');";
 	           };
 	       		
             $lastRecord = $numberFound9 - 1;
 		
-            $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber9[$lastRecord]' , '$species9[$lastRecord]', '$status9[$lastRecord]', '$sex9[$lastRecord]', '$age9[$lastRecord]', '$notes9[$lastRecord]', '$time', '$duration', '$weather', '$action9[$lastRecord]')";
             }
         
         
         if($numberFound10 == true){	
-            $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber9[0]' , '$species9[0]', '$status9[0]', '$sex9[0]', '$age9[0]', '$notes9[0]', '$time', '$duration', '$weather', '$action9[0]');";
 		
 		      for ($i = 1; $i <= ($numberFound9 - 2); $i++){
-                $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+                $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
                 VALUES ('$date' , '$volunteer', '$route' , '$siteNumber9[$i]' , '$species9[$i]', '$status9[$i]', '$sex9[$i]', '$age9[$i]', '$notes9[$i]', '$time', '$duration', '$weather', '$action9[$i]');";
 	           };
 	       		
             $lastRecord = $numberFound9 - 1;
 		
-            $sql .= "INSERT INTO step_one (date , volunteer, route, site, species,  deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species,  deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber9[$lastRecord]' , '$species9[$lastRecord]', '$status9[$lastRecord]', '$sex9[$lastRecord]', '$age9[$lastRecord]', '$notes9[$lastRecord]', '$time', '$duration', '$weather', '$action9[$lastRecord]');";
              
             }
@@ -1469,12 +1469,12 @@ for ($i = 0; $i < $numberFound10; $i++){
   if ($numberFound10 == "none"){
 
        	if($numberFound11 == false){
-		  $sql .= "INSERT INTO step_one (date, volunteer, route, site, species, start_time, duration, weather, notes)
+		  $sql .= "INSERT INTO PSFIST (date, volunteer, route, site, species, start_time, duration, weather, notes)
 		  VALUES ('$date' , '$volunteer', '$route' , '11' , 'none', '$time', '$duration', '$weather', '$noneNotes10')";
 		}
 		
 		if($numberFound11 == true){
-		  $sql .= "INSERT INTO step_one (date, volunteer, route, site, species, start_time, duration, weather, notes)
+		  $sql .= "INSERT INTO PSFIST (date, volunteer, route, site, species, start_time, duration, weather, notes)
 		  VALUES ('$date' , '$volunteer',  '$route' , '11' , 'none', '$time', '$duration', '$weather', '$noneNotes10');";
 		};
     }
@@ -1483,12 +1483,12 @@ for ($i = 0; $i < $numberFound10; $i++){
 	if ($numberFound10 == 1){
 	
 		if($numberFound11 == false){
-		  $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber10[0]' , '$species10[0]', '$status10[0]', '$sex10[0]', '$age10[0]', '$notes10[0]', '$time', '$duration', '$weather', '$action10[0]')";
 		}
 		
 		if($numberFound11 == true){
-		  $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber10[0]' , '$species10[0]', '$status10[0]', '$sex10[0]', '$age10[0]', '$notes10[0]', '$time', '$duration', '$weather', '$action10[0]');";
 		};
 		
@@ -1499,19 +1499,19 @@ for ($i = 0; $i < $numberFound10; $i++){
 	elseif ($numberFound10 == 2){
 	
 		if($numberFound11 == false){	
-		  $sql .= "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer',  '$route' , '$siteNumber10[0]' , '$species10[0]', '$status10[0]', '$sex10[0]', '$age10[0]', '$notes10[0]', '$time', '$duration', '$weather', '$action10[0]');";
 		
-		  $sql .= "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber10[1]' , '$species10[1]', '$status10[1]', '$sex10[1]', '$age10[1]', '$notes10[1]', '$time', '$duration', '$weather', '$action10[1]')";
 		}
         
 		
 		if($numberFound11 == true){	
-		  $sql .= "INSERT INTO step_one (date ,  volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date ,  volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber10[0]' , '$species10[0]', '$status10[0]', '$sex10[0]', '$age10[0]', '$notes10[0]', '$time', '$duration', '$weather', '$action10[0]');";
 		
-		  $sql .= "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber10[1]' , '$species10[1]', '$status10[1]', '$sex10[1]', '$age10[1]', '$notes10[1]', '$time', '$duration', '$weather', '$action10[1]');";
 		}	
 	}
@@ -1522,33 +1522,33 @@ for ($i = 0; $i < $numberFound10; $i++){
 	elseif ($numberFound10 > 2){
         
         if($numberFound11 == false){	
-            $sql .= "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql .= "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber10[0]' , '$species10[0]', '$status10[0]', '$sex10[0]', '$age10[0]', '$notes10[0]', '$time', '$duration', '$weather', '$action10[0]');";
 		
 		      for ($i = 1; $i <= ($numberFound10 - 2); $i++){
-                $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+                $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
                 VALUES ('$date' , '$volunteer', '$route' , '$siteNumber10[$i]' , '$species10[$i]', '$status10[$i]', '$sex10[$i]', '$age10[$i]', '$notes10[$i]', '$time', '$duration', '$weather', '$action10[$i]');";
 	           };
 	       		
             $lastRecord = $numberFound10 - 1;
 		
-            $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber10[$lastRecord]' , '$species10[$lastRecord]', '$status10[$lastRecord]', '$sex10[$lastRecord]', '$age10[$lastRecord]', '$notes10[$lastRecord]', '$time', '$duration', '$weather', '$action10[$lastRecord]')";
             }
         
         
         if($numberFound11 == true){	
-            $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber10[0]' , '$species10[0]', '$status10[0]', '$sex10[0]', '$age10[0]', '$notes10[0]', '$time', '$duration', '$weather', '$action10[0]');";
 		
 		      for ($i = 1; $i <= ($numberFound10 - 2); $i++){
-                $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+                $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
                 VALUES ('$date' , '$volunteer', '$route' , '$siteNumber10[$i]' , '$species10[$i]', '$status10[$i]', '$sex10[$i]', '$age10[$i]', '$notes10[$i]', '$time', '$duration', '$weather', '$action10[$i]');";
 	           };
 	       		
             $lastRecord = $numberFound10 - 1;
 		
-            $sql .= "INSERT INTO step_one (date , volunteer, route, site, species,  deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species,  deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber10[$lastRecord]' , '$species10[$lastRecord]', '$status10[$lastRecord]', '$sex10[$lastRecord]', '$age10[$lastRecord]', '$notes10[$lastRecord]', '$time', '$duration', '$weather', '$action10[$lastRecord]');";
              
             }
@@ -1585,12 +1585,12 @@ for ($i = 0; $i < $numberFound11; $i++){
   if ($numberFound11 == "none"){
 
        	if($numberFound12 == false){
-		  $sql .= "INSERT INTO step_one (date, volunteer, route, site, species, start_time, duration, weather, notes)
+		  $sql .= "INSERT INTO PSFIST (date, volunteer, route, site, species, start_time, duration, weather, notes)
 		  VALUES ('$date' , '$volunteer', '$route' , '12' , 'none', '$time', '$duration', '$weather', '$noneNotes11')";
 		}
 		
 		if($numberFound12 == true){
-		  $sql .= "INSERT INTO step_one (date, volunteer, route, site, species, start_time, duration, weather, notes)
+		  $sql .= "INSERT INTO PSFIST (date, volunteer, route, site, species, start_time, duration, weather, notes)
 		  VALUES ('$date' , '$volunteer',  '$route' , '12' , 'none', '$time', '$duration', '$weather', '$noneNotes11');";
 		};
     }
@@ -1599,12 +1599,12 @@ for ($i = 0; $i < $numberFound11; $i++){
 	if ($numberFound11 == 1){
 	
 		if($numberFound12 == false){
-		  $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber11[0]' , '$species11[0]', '$status11[0]', '$sex11[0]', '$age11[0]', '$notes11[0]', '$time', '$duration', '$weather', '$action11[0]')";
 		}
 		
 		if($numberFound12 == true){
-		  $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber11[0]' , '$species11[0]', '$status11[0]', '$sex11[0]', '$age11[0]', '$notes11[0]', '$time', '$duration', '$weather', '$action11[0]');";
 		};
 		
@@ -1615,19 +1615,19 @@ for ($i = 0; $i < $numberFound11; $i++){
 	elseif ($numberFound11 == 2){
 	
 		if($numberFound12 == false){	
-		  $sql .= "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer',  '$route' , '$siteNumber11[0]' , '$species11[0]', '$status11[0]', '$sex11[0]', '$age11[0]', '$notes11[0]', '$time', '$duration', '$weather', '$action11[0]');";
 		
-		  $sql .= "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber11[1]' , '$species11[1]', '$status11[1]', '$sex11[1]', '$age11[1]', '$notes11[1]', '$time', '$duration', '$weather', '$action11[1]')";
 		}
         
 		
 		if($numberFound12 == true){	
-		  $sql .= "INSERT INTO step_one (date ,  volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date ,  volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber11[0]' , '$species11[0]', '$status11[0]', '$sex11[0]', '$age11[0]', '$notes11[0]', '$time', '$duration', '$weather', '$action11[0]');";
 		
-		  $sql .= "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber11[1]' , '$species11[1]', '$status11[1]', '$sex11[1]', '$age11[1]', '$notes11[1]', '$time', '$duration', '$weather', '$action11[1]');";
 		}	
 	}
@@ -1638,33 +1638,33 @@ for ($i = 0; $i < $numberFound11; $i++){
 	elseif ($numberFound11 > 2){
         
         if($numberFound12 == false){	
-            $sql .= "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql .= "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber11[0]' , '$species11[0]', '$status11[0]', '$sex11[0]', '$age11[0]', '$notes11[0]', '$time', '$duration', '$weather', '$action11[0]');";
 		
 		      for ($i = 1; $i <= ($numberFound11 - 2); $i++){
-                $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+                $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
                 VALUES ('$date' , '$volunteer', '$route' , '$siteNumber11[$i]' , '$species11[$i]', '$status11[$i]', '$sex11[$i]', '$age11[$i]', '$notes11[$i]', '$time', '$duration', '$weather', '$action11[$i]');";
 	           };
 	       		
             $lastRecord = $numberFound11 - 1;
 		
-            $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber11[$lastRecord]' , '$species11[$lastRecord]', '$status11[$lastRecord]', '$sex11[$lastRecord]', '$age11[$lastRecord]', '$notes11[$lastRecord]', '$time', '$duration', '$weather', '$action11[$lastRecord]')";
             }
         
         
         if($numberFound12 == true){	
-            $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber11[0]' , '$species11[0]', '$status11[0]', '$sex11[0]', '$age11[0]', '$notes11[0]', '$time', '$duration', '$weather', '$action11[0]');";
 		
 		      for ($i = 1; $i <= ($numberFound11 - 2); $i++){
-                $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+                $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
                 VALUES ('$date' , '$volunteer', '$route' , '$siteNumber11[$i]' , '$species11[$i]', '$status11[$i]', '$sex11[$i]', '$age11[$i]', '$notes11[$i]', '$time', '$duration', '$weather', '$action11[$i]');";
 	           };
 	       		
             $lastRecord = $numberFound11 - 1;
 		
-            $sql .= "INSERT INTO step_one (date , volunteer, route, site, species,  deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species,  deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber11[$lastRecord]' , '$species11[$lastRecord]', '$status11[$lastRecord]', '$sex11[$lastRecord]', '$age11[$lastRecord]', '$notes11[$lastRecord]', '$time', '$duration', '$weather', '$action11[$lastRecord]');";
              
             }
@@ -1696,12 +1696,12 @@ for ($i = 0; $i < $numberFound12; $i++){
   if ($numberFound12 == "none"){
 
        	if($numberFound13 == false){
-		  $sql .= "INSERT INTO step_one (date, volunteer, route, site, species, start_time, duration, weather, notes)
+		  $sql .= "INSERT INTO PSFIST (date, volunteer, route, site, species, start_time, duration, weather, notes)
 		  VALUES ('$date' , '$volunteer', '$route' , '13' , 'none', '$time', '$duration', '$weather', '$noneNotes12')";
 		}
 		
 		if($numberFound13 == true){
-		  $sql .= "INSERT INTO step_one (date, volunteer, route, site, species, start_time, duration, weather, notes)
+		  $sql .= "INSERT INTO PSFIST (date, volunteer, route, site, species, start_time, duration, weather, notes)
 		  VALUES ('$date' , '$volunteer',  '$route' , '13' , 'none', '$time', '$duration', '$weather', '$noneNotes12');";
 		};
     }
@@ -1710,12 +1710,12 @@ for ($i = 0; $i < $numberFound12; $i++){
 	if ($numberFound12 == 1){
 	
 		if($numberFound13 == false){
-		  $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber12[0]' , '$species12[0]', '$status12[0]', '$sex12[0]', '$age12[0]', '$notes12[0]', '$time', '$duration', '$weather', '$action12[0]')";
 		}
 		
 		if($numberFound13 == true){
-		  $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber12[0]' , '$species12[0]', '$status12[0]', '$sex12[0]', '$age12[0]', '$notes12[0]', '$time', '$duration', '$weather', '$action12[0]');";
 		};
 		
@@ -1726,19 +1726,19 @@ for ($i = 0; $i < $numberFound12; $i++){
 	elseif ($numberFound12 == 2){
 	
 		if($numberFound13 == false){	
-		  $sql .= "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer',  '$route' , '$siteNumber12[0]' , '$species12[0]', '$status12[0]', '$sex12[0]', '$age12[0]', '$notes12[0]', '$time', '$duration', '$weather', '$action12[0]');";
 		
-		  $sql .= "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber12[1]' , '$species12[1]', '$status12[1]', '$sex12[1]', '$age12[1]', '$notes12[1]', '$time', '$duration', '$weather', '$action12[1]')";
 		}
         
 		
 		if($numberFound13 == true){	
-		  $sql .= "INSERT INTO step_one (date ,  volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date ,  volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber12[0]' , '$species12[0]', '$status12[0]', '$sex12[0]', '$age12[0]', '$notes12[0]', '$time', '$duration', '$weather', '$action12[0]');";
 		
-		  $sql .= "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber12[1]' , '$species12[1]', '$status12[1]', '$sex12[1]', '$age12[1]', '$notes12[1]', '$time', '$duration', '$weather', '$action12[1]');";
 		}	
 	}
@@ -1749,33 +1749,33 @@ for ($i = 0; $i < $numberFound12; $i++){
 	elseif ($numberFound12 > 2){
         
         if($numberFound13 == false){	
-            $sql .= "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql .= "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber12[0]' , '$species12[0]', '$status12[0]', '$sex12[0]', '$age12[0]', '$notes12[0]', '$time', '$duration', '$weather', '$action12[0]');";
 		
 		      for ($i = 1; $i <= ($numberFound12 - 2); $i++){
-                $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+                $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
                 VALUES ('$date' , '$volunteer', '$route' , '$siteNumber12[$i]' , '$species12[$i]', '$status12[$i]', '$sex12[$i]', '$age12[$i]', '$notes12[$i]', '$time', '$duration', '$weather', '$action12[$i]');";
 	           };
 	       		
             $lastRecord = $numberFound12 - 1;
 		
-            $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber12[$lastRecord]' , '$species12[$lastRecord]', '$status12[$lastRecord]', '$sex12[$lastRecord]', '$age12[$lastRecord]', '$notes12[$lastRecord]', '$time', '$duration', '$weather', '$action12[$lastRecord]')";
             }
         
         
         if($numberFound13 == true){	
-            $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber12[0]' , '$species12[0]', '$status12[0]', '$sex12[0]', '$age12[0]', '$notes12[0]', '$time', '$duration', '$weather', '$action12[0]');";
 		
 		      for ($i = 1; $i <= ($numberFound12 - 2); $i++){
-                $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+                $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
                 VALUES ('$date' , '$volunteer', '$route' , '$siteNumber12[$i]' , '$species12[$i]', '$status12[$i]', '$sex12[$i]', '$age12[$i]', '$notes12[$i]', '$time', '$duration', '$weather', '$action12[$i]');";
 	           };
 	       		
             $lastRecord = $numberFound12 - 1;
 		
-            $sql .= "INSERT INTO step_one (date , volunteer, route, site, species,  deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species,  deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber12[$lastRecord]' , '$species12[$lastRecord]', '$status12[$lastRecord]', '$sex12[$lastRecord]', '$age12[$lastRecord]', '$notes12[$lastRecord]', '$time', '$duration', '$weather', '$action12[$lastRecord]');";
              
             }
@@ -1817,12 +1817,12 @@ for ($i = 0; $i < $numberFound13; $i++){
   if ($numberFound13 == "none"){
 
        	if($numberFound14 == false){
-		  $sql .= "INSERT INTO step_one (date, volunteer, route, site, species, start_time, duration, weather, notes)
+		  $sql .= "INSERT INTO PSFIST (date, volunteer, route, site, species, start_time, duration, weather, notes)
 		  VALUES ('$date' , '$volunteer', '$route' , '14' , 'none', '$time', '$duration', '$weather', '$noneNotes13')";
 		}
 		
 		if($numberFound14 == true){
-		  $sql .= "INSERT INTO step_one (date, volunteer, route, site, species, start_time, duration, weather, notes)
+		  $sql .= "INSERT INTO PSFIST (date, volunteer, route, site, species, start_time, duration, weather, notes)
 		  VALUES ('$date' , '$volunteer',  '$route' , '14' , 'none', '$time', '$duration', '$weather', '$noneNotes13');";
 		};
     }
@@ -1831,12 +1831,12 @@ for ($i = 0; $i < $numberFound13; $i++){
 	if ($numberFound13 == 1){
 	
 		if($numberFound14 == false){
-		  $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber13[0]' , '$species13[0]', '$status13[0]', '$sex13[0]', '$age13[0]', '$notes13[0]', '$time', '$duration', '$weather', '$action13[0]')";
 		}
 		
 		if($numberFound14 == true){
-		  $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber13[0]' , '$species13[0]', '$status13[0]', '$sex13[0]', '$age13[0]', '$notes13[0]', '$time', '$duration', '$weather', '$action13[0]');";
 		};
 		
@@ -1847,19 +1847,19 @@ for ($i = 0; $i < $numberFound13; $i++){
 	elseif ($numberFound13 == 2){
 	
 		if($numberFound14 == false){	
-		  $sql .= "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer',  '$route' , '$siteNumber13[0]' , '$species13[0]', '$status13[0]', '$sex13[0]', '$age13[0]', '$notes13[0]', '$time', '$duration', '$weather', '$action13[0]');";
 		
-		  $sql .= "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber13[1]' , '$species13[1]', '$status13[1]', '$sex13[1]', '$age13[1]', '$notes13[1]', '$time', '$duration', '$weather', '$action13[1]')";
 		}
         
 		
 		if($numberFound14 == true){	
-		  $sql .= "INSERT INTO step_one (date ,  volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date ,  volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber13[0]' , '$species13[0]', '$status13[0]', '$sex13[0]', '$age13[0]', '$notes13[0]', '$time', '$duration', '$weather', '$action13[0]');";
 		
-		  $sql .= "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber13[1]' , '$species13[1]', '$status13[1]', '$sex13[1]', '$age13[1]', '$notes13[1]', '$time', '$duration', '$weather', '$action13[1]');";
 		}	
 	}
@@ -1870,33 +1870,33 @@ for ($i = 0; $i < $numberFound13; $i++){
 	elseif ($numberFound13 > 2){
         
         if($numberFound14 == false){	
-            $sql .= "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql .= "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber13[0]' , '$species13[0]', '$status13[0]', '$sex13[0]', '$age13[0]', '$notes13[0]', '$time', '$duration', '$weather', '$action13[0]');";
 		
 		      for ($i = 1; $i <= ($numberFound13 - 2); $i++){
-                $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+                $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
                 VALUES ('$date' , '$volunteer', '$route' , '$siteNumber13[$i]' , '$species13[$i]', '$status13[$i]', '$sex13[$i]', '$age13[$i]', '$notes13[$i]', '$time', '$duration', '$weather', '$action13[$i]');";
 	           };
 	       		
             $lastRecord = $numberFound13 - 1;
 		
-            $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber13[$lastRecord]' , '$species13[$lastRecord]', '$status13[$lastRecord]', '$sex13[$lastRecord]', '$age13[$lastRecord]', '$notes13[$lastRecord]', '$time', '$duration', '$weather', '$action13[$lastRecord]')";
             }
         
         
         if($numberFound14 == true){	
-            $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber13[0]' , '$species13[0]', '$status13[0]', '$sex13[0]', '$age13[0]', '$notes13[0]', '$time', '$duration', '$weather', '$action13[0]');";
 		
 		      for ($i = 1; $i <= ($numberFound13 - 2); $i++){
-                $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+                $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
                 VALUES ('$date' , '$volunteer', '$route' , '$siteNumber13[$i]' , '$species13[$i]', '$status13[$i]', '$sex13[$i]', '$age13[$i]', '$notes13[$i]', '$time', '$duration', '$weather', '$action13[$i]');";
 	           };
 	       		
             $lastRecord = $numberFound13 - 1;
 		
-            $sql .= "INSERT INTO step_one (date , volunteer, route, site, species,  deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species,  deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber13[$lastRecord]' , '$species13[$lastRecord]', '$status13[$lastRecord]', '$sex13[$lastRecord]', '$age13[$lastRecord]', '$notes13[$lastRecord]', '$time', '$duration', '$weather', '$action13[$lastRecord]');";
              
             }
@@ -1935,12 +1935,12 @@ for ($i = 0; $i < $numberFound14; $i++){
   if ($numberFound14 == "none"){
 
        	if($numberFound15 == false){
-		  $sql .= "INSERT INTO step_one (date, volunteer, route, site, species, start_time, duration, weather, notes)
+		  $sql .= "INSERT INTO PSFIST (date, volunteer, route, site, species, start_time, duration, weather, notes)
 		  VALUES ('$date' , '$volunteer', '$route' , '15' , 'none', '$time', '$duration', '$weather', '$noneNotes14')";
 		}
 		
 		if($numberFound15 == true){
-		  $sql .= "INSERT INTO step_one (date, volunteer, route, site, species, start_time, duration, weather, notes)
+		  $sql .= "INSERT INTO PSFIST (date, volunteer, route, site, species, start_time, duration, weather, notes)
 		  VALUES ('$date' , '$volunteer',  '$route' , '15' , 'none', '$time', '$duration', '$weather', '$noneNotes14');";
 		};
     }
@@ -1949,12 +1949,12 @@ for ($i = 0; $i < $numberFound14; $i++){
 	if ($numberFound14 == 1){
 	
 		if($numberFound15 == false){
-		  $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber14[0]' , '$species14[0]', '$status14[0]', '$sex14[0]', '$age14[0]', '$notes14[0]', '$time', '$duration', '$weather', '$action14[0]')";
 		}
 		
 		if($numberFound15 == true){
-		  $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber14[0]' , '$species14[0]', '$status14[0]', '$sex14[0]', '$age14[0]', '$notes14[0]', '$time', '$duration', '$weather', '$action14[0]');";
 		};
 		
@@ -1965,19 +1965,19 @@ for ($i = 0; $i < $numberFound14; $i++){
 	elseif ($numberFound14 == 2){
 	
 		if($numberFound15 == false){	
-		  $sql .= "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer',  '$route' , '$siteNumber14[0]' , '$species14[0]', '$status14[0]', '$sex14[0]', '$age14[0]', '$notes14[0]', '$time', '$duration', '$weather', '$action14[0]');";
 		
-		  $sql .= "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber14[1]' , '$species14[1]', '$status14[1]', '$sex14[1]', '$age14[1]', '$notes14[1]', '$time', '$duration', '$weather', '$action14[1]')";
 		}
         
 		
 		if($numberFound15 == true){	
-		  $sql .= "INSERT INTO step_one (date ,  volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date ,  volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber14[0]' , '$species14[0]', '$status14[0]', '$sex14[0]', '$age14[0]', '$notes14[0]', '$time', '$duration', '$weather', '$action14[0]');";
 		
-		  $sql .= "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber14[1]' , '$species14[1]', '$status14[1]', '$sex14[1]', '$age14[1]', '$notes14[1]', '$time', '$duration', '$weather', '$action14[1]');";
 		}	
 	}
@@ -1988,33 +1988,33 @@ for ($i = 0; $i < $numberFound14; $i++){
 	elseif ($numberFound14 > 2){
         
         if($numberFound15 == false){	
-            $sql .= "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql .= "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber14[0]' , '$species14[0]', '$status14[0]', '$sex14[0]', '$age14[0]', '$notes14[0]', '$time', '$duration', '$weather', '$action14[0]');";
 		
 		      for ($i = 1; $i <= ($numberFound14 - 2); $i++){
-                $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+                $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
                 VALUES ('$date' , '$volunteer', '$route' , '$siteNumber14[$i]' , '$species14[$i]', '$status14[$i]', '$sex14[$i]', '$age14[$i]', '$notes14[$i]', '$time', '$duration', '$weather', '$action14[$i]');";
 	           };
 	       		
             $lastRecord = $numberFound14 - 1;
 		
-            $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber14[$lastRecord]' , '$species14[$lastRecord]', '$status14[$lastRecord]', '$sex14[$lastRecord]', '$age14[$lastRecord]', '$notes14[$lastRecord]', '$time', '$duration', '$weather', '$action14[$lastRecord]')";
             }
         
         
         if($numberFound15 == true){	
-            $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber14[0]' , '$species14[0]', '$status14[0]', '$sex14[0]', '$age14[0]', '$notes14[0]', '$time', '$duration', '$weather', '$action14[0]');";
 		
 		      for ($i = 1; $i <= ($numberFound14 - 2); $i++){
-                $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+                $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
                 VALUES ('$date' , '$volunteer', '$route' , '$siteNumber14[$i]' , '$species14[$i]', '$status14[$i]', '$sex14[$i]', '$age14[$i]', '$notes14[$i]', '$time', '$duration', '$weather', '$action14[$i]');";
 	           };
 	       		
             $lastRecord = $numberFound14 - 1;
 		
-            $sql .= "INSERT INTO step_one (date , volunteer, route, site, species,  deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species,  deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber14[$lastRecord]' , '$species14[$lastRecord]', '$status14[$lastRecord]', '$sex14[$lastRecord]', '$age14[$lastRecord]', '$notes14[$lastRecord]', '$time', '$duration', '$weather', '$action14[$lastRecord]');";
              
             }
@@ -2046,12 +2046,12 @@ for ($i = 0; $i < $numberFound15; $i++){
   if ($numberFound15 == "none"){
 
        	if($numberFound16 == false){
-		  $sql .= "INSERT INTO step_one (date, volunteer, route, site, species, start_time, duration, weather, notes)
+		  $sql .= "INSERT INTO PSFIST (date, volunteer, route, site, species, start_time, duration, weather, notes)
 		  VALUES ('$date' , '$volunteer', '$route' , '16' , 'none', '$time', '$duration', '$weather', '$noneNotes15')";
 		}
 		
 		if($numberFound16 == true){
-		  $sql .= "INSERT INTO step_one (date, volunteer, route, site, species, start_time, duration, weather, notes)
+		  $sql .= "INSERT INTO PSFIST (date, volunteer, route, site, species, start_time, duration, weather, notes)
 		  VALUES ('$date' , '$volunteer',  '$route' , '16' , 'none', '$time', '$duration', '$weather', '$noneNotes15');";
 		};
     }
@@ -2060,12 +2060,12 @@ for ($i = 0; $i < $numberFound15; $i++){
 	if ($numberFound15 == 1){
 	
 		if($numberFound16 == false){
-		  $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber15[0]' , '$species15[0]', '$status15[0]', '$sex15[0]', '$age15[0]', '$notes15[0]', '$time', '$duration', '$weather', '$action15[0]')";
 		}
 		
 		if($numberFound16 == true){
-		  $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber15[0]' , '$species15[0]', '$status15[0]', '$sex15[0]', '$age15[0]', '$notes15[0]', '$time', '$duration', '$weather', '$action15[0]');";
 		};
 		
@@ -2076,19 +2076,19 @@ for ($i = 0; $i < $numberFound15; $i++){
 	elseif ($numberFound15 == 2){
 	
 		if($numberFound16 == false){	
-		  $sql .= "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer',  '$route' , '$siteNumber15[0]' , '$species15[0]', '$status15[0]', '$sex15[0]', '$age15[0]', '$notes15[0]', '$time', '$duration', '$weather', '$action15[0]');";
 		
-		  $sql .= "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber15[1]' , '$species15[1]', '$status15[1]', '$sex15[1]', '$age15[1]', '$notes15[1]', '$time', '$duration', '$weather', '$action15[1]')";
 		}
         
 		
 		if($numberFound16 == true){	
-		  $sql .= "INSERT INTO step_one (date ,  volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date ,  volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber15[0]' , '$species15[0]', '$status15[0]', '$sex15[0]', '$age15[0]', '$notes15[0]', '$time', '$duration', '$weather', '$action15[0]');";
 		
-		  $sql .= "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber15[1]' , '$species15[1]', '$status15[1]', '$sex15[1]', '$age15[1]', '$notes15[1]', '$time', '$duration', '$weather', '$action15[1]');";
 		}	
 	}
@@ -2099,33 +2099,33 @@ for ($i = 0; $i < $numberFound15; $i++){
 	elseif ($numberFound15 > 2){
         
         if($numberFound16 == false){	
-            $sql .= "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql .= "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber15[0]' , '$species15[0]', '$status15[0]', '$sex15[0]', '$age15[0]', '$notes15[0]', '$time', '$duration', '$weather', '$action15[0]');";
 		
 		      for ($i = 1; $i <= ($numberFound15 - 2); $i++){
-                $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+                $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
                 VALUES ('$date' , '$volunteer', '$route' , '$siteNumber15[$i]' , '$species15[$i]', '$status15[$i]', '$sex15[$i]', '$age15[$i]', '$notes15[$i]', '$time', '$duration', '$weather', '$action15[$i]');";
 	           };
 	       		
             $lastRecord = $numberFound15 - 1;
 		
-            $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber15[$lastRecord]' , '$species15[$lastRecord]', '$status15[$lastRecord]', '$sex15[$lastRecord]', '$age15[$lastRecord]', '$notes15[$lastRecord]', '$time', '$duration', '$weather', '$action15[$lastRecord]')";
             }
         
         
         if($numberFound16 == true){	
-            $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber15[0]' , '$species15[0]', '$status15[0]', '$sex15[0]', '$age15[0]', '$notes15[0]', '$time', '$duration', '$weather', '$action15[0]');";
 		
 		      for ($i = 1; $i <= ($numberFound15 - 2); $i++){
-                $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+                $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
                 VALUES ('$date' , '$volunteer', '$route' , '$siteNumber15[$i]' , '$species15[$i]', '$status15[$i]', '$sex15[$i]', '$age15[$i]', '$notes15[$i]', '$time', '$duration', '$weather', '$action15[$i]');";
 	           };
 	       		
             $lastRecord = $numberFound15 - 1;
 		
-            $sql .= "INSERT INTO step_one (date , volunteer, route, site, species,  deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species,  deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber15[$lastRecord]' , '$species15[$lastRecord]', '$status15[$lastRecord]', '$sex15[$lastRecord]', '$age15[$lastRecord]', '$notes15[$lastRecord]', '$time', '$duration', '$weather', '$action15[$lastRecord]');";
              
             }
@@ -2164,12 +2164,12 @@ for ($i = 0; $i < $numberFound16; $i++){
   if ($numberFound16 == "none"){
 
        	if($numberFound17 == false){
-		  $sql .= "INSERT INTO step_one (date, volunteer, route, site, species, start_time, duration, weather, notes)
+		  $sql .= "INSERT INTO PSFIST (date, volunteer, route, site, species, start_time, duration, weather, notes)
 		  VALUES ('$date' , '$volunteer', '$route' , '17' , 'none', '$time', '$duration', '$weather', '$noneNotes16')";
 		}
 		
 		if($numberFound17 == true){
-		  $sql .= "INSERT INTO step_one (date, volunteer, route, site, species, start_time, duration, weather, notes)
+		  $sql .= "INSERT INTO PSFIST (date, volunteer, route, site, species, start_time, duration, weather, notes)
 		  VALUES ('$date' , '$volunteer',  '$route' , '17' , 'none', '$time', '$duration', '$weather', '$noneNotes16');";
 		};
     }
@@ -2178,12 +2178,12 @@ for ($i = 0; $i < $numberFound16; $i++){
 	if ($numberFound16 == 1){
 	
 		if($numberFound17 == false){
-		  $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber16[0]' , '$species16[0]', '$status16[0]', '$sex16[0]', '$age16[0]', '$notes16[0]', '$time', '$duration', '$weather', '$action16[0]')";
 		}
 		
 		if($numberFound17 == true){
-		  $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber16[0]' , '$species16[0]', '$status16[0]', '$sex16[0]', '$age16[0]', '$notes16[0]', '$time', '$duration', '$weather', '$action16[0]');";
 		};
 		
@@ -2194,19 +2194,19 @@ for ($i = 0; $i < $numberFound16; $i++){
 	elseif ($numberFound16 == 2){
 	
 		if($numberFound17 == false){	
-		  $sql .= "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer',  '$route' , '$siteNumber16[0]' , '$species16[0]', '$status16[0]', '$sex16[0]', '$age16[0]', '$notes16[0]', '$time', '$duration', '$weather', '$action16[0]');";
 		
-		  $sql .= "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber16[1]' , '$species16[1]', '$status16[1]', '$sex16[1]', '$age16[1]', '$notes16[1]', '$time', '$duration', '$weather', '$action16[1]')";
 		}
         
 		
 		if($numberFound17 == true){	
-		  $sql .= "INSERT INTO step_one (date ,  volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date ,  volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber16[0]' , '$species16[0]', '$status16[0]', '$sex16[0]', '$age16[0]', '$notes16[0]', '$time', '$duration', '$weather', '$action16[0]');";
 		
-		  $sql .= "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		  $sql .= "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		  VALUES ('$date' , '$volunteer', '$route' , '$siteNumber16[1]' , '$species16[1]', '$status16[1]', '$sex16[1]', '$age16[1]', '$notes16[1]', '$time', '$duration', '$weather', '$action16[1]');";
 		}	
 	}
@@ -2217,33 +2217,33 @@ for ($i = 0; $i < $numberFound16; $i++){
 	elseif ($numberFound16 > 2){
         
         if($numberFound17 == false){	
-            $sql .= "INSERT INTO step_one (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql .= "INSERT INTO PSFIST (date , volunteer,  route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber16[0]' , '$species16[0]', '$status16[0]', '$sex16[0]', '$age16[0]', '$notes16[0]', '$time', '$duration', '$weather', '$action16[0]');";
 		
 		      for ($i = 1; $i <= ($numberFound16 - 2); $i++){
-                $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+                $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
                 VALUES ('$date' , '$volunteer', '$route' , '$siteNumber16[$i]' , '$species16[$i]', '$status16[$i]', '$sex16[$i]', '$age16[$i]', '$notes16[$i]', '$time', '$duration', '$weather', '$action16[$i]');";
 	           };
 	       		
             $lastRecord = $numberFound16 - 1;
 		
-            $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber16[$lastRecord]' , '$species16[$lastRecord]', '$status16[$lastRecord]', '$sex16[$lastRecord]', '$age16[$lastRecord]', '$notes16[$lastRecord]', '$time', '$duration', '$weather', '$action16[$lastRecord]')";
             }
         
         
         if($numberFound17 == true){	
-            $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber16[0]' , '$species16[0]', '$status16[0]', '$sex16[0]', '$age16[0]', '$notes16[0]', '$time', '$duration', '$weather', '$action16[0]');";
 		
 		      for ($i = 1; $i <= ($numberFound16 - 2); $i++){
-                $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+                $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
                 VALUES ('$date' , '$volunteer', '$route' , '$siteNumber16[$i]' , '$species16[$i]', '$status16[$i]', '$sex16[$i]', '$age16[$i]', '$notes16[$i]', '$time', '$duration', '$weather', '$action16[$i]');";
 	           };
 	       		
             $lastRecord = $numberFound16 - 1;
 		
-            $sql .= "INSERT INTO step_one (date , volunteer, route, site, species,  deadinjured, sex, age, notes, start_time, duration, weather, action)
+            $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species,  deadinjured, sex, age, notes, start_time, duration, weather, action)
             VALUES ('$date' , '$volunteer', '$route' , '$siteNumber16[$lastRecord]' , '$species16[$lastRecord]', '$status16[$lastRecord]', '$sex16[$lastRecord]', '$age16[$lastRecord]', '$notes16[$lastRecord]', '$time', '$duration', '$weather', '$action16[$lastRecord]');";
              
             }
@@ -2278,7 +2278,7 @@ for ($i = 0; $i < $numberFound17; $i++){
 	};
 
     if ($numberFound17 == "none"){
-        $sql .= "INSERT INTO step_one (date , volunteer, route, site, species, start_time, duration, weather, notes)
+        $sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, start_time, duration, weather, notes)
 		  VALUES ('$date' , '$volunteer', '$route' , '18' , 'none', '$time', '$duration', '$weather', '$noneNotes17')";
     }
 
@@ -2286,7 +2286,7 @@ for ($i = 0; $i < $numberFound17; $i++){
 
 	if ($numberFound17 == 1){
 		
-		$sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		$sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		VALUES ('$date' , '$volunteer', '$route' , '$siteNumber17[0]' , '$species17[0]', '$status17[0]', '$sex17[0]', '$age17[0]', '$notes17[0]', '$time', '$duration', '$weather', '$action17[0]')";	
 	}
 
@@ -2294,11 +2294,11 @@ for ($i = 0; $i < $numberFound17; $i++){
 
 	elseif ($numberFound17 == 2){
 		
-		$sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		$sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		VALUES ('$date' , '$volunteer', '$route' , '$siteNumber17[0]' , '$species17[0]', '$status17[0]', '$sex17[0]', '$age17[0]', '$notes17[0]', '$time', '$duration', '$weather', '$action17[0]');";
 		
 		
-		$sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		$sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		VALUES ('$date' , '$volunteer', '$route' , '$siteNumber17[1]' , '$species17[1]', '$status17[1]', '$sex17[1]', '$age17[1]', '$notes17[1]', '$time', '$duration', '$weather', '$action17[1]')";	
 	}
 	
@@ -2307,19 +2307,19 @@ for ($i = 0; $i < $numberFound17; $i++){
  
 	elseif ($numberFound17 > 2){
 		
-		$sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		$sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		VALUES ('$date' , '$volunteer', '$route' , '$siteNumber17[0]' , '$species17[0]', '$status17[0]', '$sex17[0]', '$age17[0]', '$notes17[0]', '$time', '$duration', '$weather', '$action17[0]');";
 		
 		for ($i = 1; $i <= ($numberFound17 - 2); $i++){
 
-            		$sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+            		$sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
             		VALUES ('$date' , '$volunteer', '$route' , '$siteNumber17[$i]' , '$species17[$i]', '$status17[$i]', '$sex17[$i]', '$age17[$i]', '$notes17[$i]', '$time', '$duration', '$weather', '$action17[$i]');";
 
 	       		};
 	       		
 		$lastRecord = $numberFound17 - 1;
 		
-		$sql .= "INSERT INTO step_one (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
+		$sql .= "INSERT INTO PSFIST (date , volunteer, route, site, species, deadinjured, sex, age, notes, start_time, duration, weather, action)
 		VALUES ('$date' , '$volunteer', '$route' , '$siteNumber17[$lastRecord]' , '$species17[$lastRecord]', '$status17[$lastRecord]', '$sex17[$lastRecord]', '$age17[$lastRecord]', '$notes17[$lastRecord]', '$time', '$duration', '$weather', '$action17[$lastRecord]')";	
 	};
 
