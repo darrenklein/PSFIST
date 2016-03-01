@@ -2330,7 +2330,7 @@ for ($i = 0; $i < $numberFound17; $i++){
   
 if ($conn->multi_query($sql) === TRUE) {
      $conn->close();
-     header("Location:http://d-bird.org/PSF/PSFIST_Confirmation.html");
+     header("Location:http://d-bird.org/psf/confirmation.html");
 
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
