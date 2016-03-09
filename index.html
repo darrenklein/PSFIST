@@ -538,6 +538,11 @@
                     
                     if (summaryNumberFound == 'none'){
                             summaryNotes = document.getElementById("noneNotes"+i+"").value;
+                        
+                            if(summaryNotes == ""){
+                                summaryNotes = "No birds found at this site"
+                            }
+                        
                             $("#site"+i+"").append('<div class="individual_summary">Notes: '+summaryNotes+'</div>');
                         }
                     
@@ -582,6 +587,7 @@
                         summaryAction = document.getElementById(""+i+"Action"+z+"").value;
                         
                         summaryNotes = document.getElementById(""+i+"Notes"+z+"").value;
+                        
                         
                         birdDisplayNumber = z + 1;
                             
